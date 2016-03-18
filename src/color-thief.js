@@ -56,7 +56,7 @@ CanvasImage.prototype.removeCanvas = function () {
 };
 
 
-var ColorThief = function () {};
+this.ColorThief = function () {};
 
 /*
  * getColor(sourceImage[, quality])
