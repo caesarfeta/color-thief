@@ -107,7 +107,11 @@ ColorThief.prototype.getPalette = function(sourceImage, colorCount, quality) {
 
     // Create custom CanvasImage object
     var image      = new CanvasImage(sourceImage);
-    var imageData  = image.getImageData();
+	
+    var imageData = undefined;
+	try{ imageData = image.getImageData() } 
+	catch( e ){ image.removeCanvas() }
+	
     var pixels     = imageData.data;
     var pixelCount = image.getPixelCount();
 
