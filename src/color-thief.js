@@ -129,7 +129,7 @@ ColorThief.prototype.getPalette = function(sourceImage, colorCount, quality) {
 
     // Send array to quantize function which clusters values
     // using median cut algorithm
-    var cmap    = MMCQ.quantize(pixelArray, colorCount);
+    var cmap    = MMCQ.quantize(pixelArray, colorCount+1);
     var palette = cmap? cmap.palette() : null;
 
     // Clean up
