@@ -1,3 +1,4 @@
+this.ColorLib = function(){
 /*!
  * Color Thief v2.0
  * by Lokesh Dhakar - http://www.lokeshdhakar.com
@@ -23,7 +24,7 @@
   It also simplifies some of the canvas context manipulation
   with a set of helper functions.
 */
-var CanvasImage = function (image) {
+this.CanvasImage = function (image) {
     this.canvas  = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
 
@@ -194,7 +195,7 @@ var newPixels = myPixels.map(function(p) {
 });
 
  */
-var MMCQ = (function() {
+this.MMCQ = (function() {
     // private constants
     var sigbits = 5,
         rshift = 8 - sigbits,
@@ -608,3 +609,10 @@ var MMCQ = (function() {
         quantize: quantize
     };
 })();
+
+return {
+	MMCQ: this.MMCQ,
+	ColorThief: this.ColorThief,
+	CanvasImage: this.CanvasImage
+}
+}
